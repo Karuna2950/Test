@@ -10,11 +10,6 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
-  state = {
-    items: [],
-    item: ''
-  }
-
   const [items, setItems] = useState([])
   const [item, setItem] = useState('')
 
@@ -23,7 +18,6 @@ export default function App() {
       .then(itemsJSON => {
         if (itemsJSON) {
           setItems(JSON.parse(itemsJSON))
-          console.log('itm => ' + JSON.parse(itemsJSON))
         }
       })
   }, [])
